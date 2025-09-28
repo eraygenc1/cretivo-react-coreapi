@@ -1,0 +1,693 @@
+:root {
+  --blackcolor: #1b1b1b;
+  --purplecolor: #1fab89;
+  --pinkcolor: #ff8080;
+  --yellowcolor: #1fab89;
+}
+
+* {
+  font-family: League Spartan, sans-serif;
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--purplecolor);
+  margin-top: -20vh;
+  list-style: none;
+  position:sticky ;
+  text-decoration: none;
+  background: var(--blackcolor);
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 1000; /* Navbar'ın üstte görünmesi için yüksek bir z-index verelim */
+}
+
+.navbar-logo img {
+  padding: 20px;
+  width: 200px;
+}
+
+.nav-menu-container {
+  transition: cubic-bezier(0.895, 0.03, 0.685, 0.22) 500ms;
+  left: 100%;
+  height: 100%;
+  padding: auto;
+  display: block;
+  width: 100%;
+
+  position: absolute;
+  z-index: 9999; /* Menü için yüksek bir z-index */
+  width: 100%;
+}
+
+.nav-menu-container.active {top: 0vw;
+  position: absolute;
+  z-index: 9999; /* Menü için yüksek bir z-index */
+  left: 40%;
+  z-index: 9999;
+  position: absolute;
+  padding: auto;
+  display: block;
+  width: 139vh;
+  height: 100vh;
+  background-color: var(--blackcolor);
+}
+
+.nav-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu ul li {
+  
+  position: absolute;
+  z-index: 9999; /* Menü için yüksek bir z-index */
+  border-top: solid 1px var(--purplecolor);
+  font-weight: 800;
+  letter-spacing: 3px;
+  list-style: none;
+  padding: 30px;
+  text-align: left;
+  position: relative; /* li'yi doğru şekilde konumlandırmak için relative verelim */
+  z-index: 1001; /* En üstte görünmesi için z-index ayarlayalım */
+}
+
+.nav-menu ul li:hover {
+  color: #000000 !important;
+  letter-spacing: 3px;
+  background: var(--yellowcolor);
+  padding: 30px;
+  text-align: left;
+  list-style: none;
+}
+
+.nav-menu ul li a {
+  transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  letter-spacing: 0px !important;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav-menu ul li:hover a {
+  letter-spacing: 5px !important;
+  text-decoration: none;
+  color: #000000;
+}
+
+header {
+  box-shadow: 0 0 10px #ffffff27;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.area1 li a {
+  cursor: pointer;
+  transition: all 500ms;
+  color: var(--yellowcolor);
+  text-decoration: none;
+  list-style: none;
+}
+.area1 li a:hover {
+  padding: 5px;
+  width: auto;
+  color: var(--blackcolor);
+  transform-origin: left;
+  letter-spacing: 1px;
+  font-weight: 800;
+  background: var(--yellowcolor);
+}
+.area1 {
+  margin-top: 20vh;
+  z-index: 0;
+  position: static;
+  color: var(--blackcolor);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  background: var(--blackcolor); /* Renk değişkeni kullanılıyor */
+}
+
+.area1 h5 {
+  font-size: 72px;
+  font-weight: 800;
+}
+.area1 h5 span {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--yellowcolor);
+}
+.area1 p,
+li,
+h5 {
+  backdrop-filter: blur(2px); /* Yazıların arkasındaki bölgeyi bulanıklaştır */
+  font-size: 28px;
+}
+.container{
+  transition: all 1s;
+}
+.area2 {
+  transition: all 500ms;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  width: 100%;
+  background: var(--blackcolor); /* Renk değişkeni kullanılıyor */
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 10000;
+  color: #555;
+  top:75px;
+  right: 10%;
+  border-radius: 20px;
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.line {
+  border-radius: 20px;
+  width: 100%;
+  height: 3px; /* Biraz kalınlaştırdım ki X daha belirgin olsun */
+  background-color: var(--purplecolor);
+  transition: all 0.6s ease;
+}
+
+.hamburger.active {
+  top:75px;
+  transform: rotate(90deg);
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 2px);
+  background-color: #ffffff;
+}
+
+.hamburger.active .line:nth-child(2) {
+  transform: rotate(-45deg) translate(7px, -3px); /* Son çizgiyi sola ve yukarı doğru kaydırıyoruz */
+  background-color: #ffffff;
+}
+
+.hamburger.active .line:nth-child(3) {
+  opacity: 0;
+  transition: none;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-size: 18px;
+  background: rgb(31, 171, 137);
+  background: radial-gradient(
+    circle,
+    rgba(31, 171, 137, 1) 0%,
+    rgba(52, 52, 52, 1) 100%
+  );
+}
+
+.swiper-button-next {
+  color: var(--yellowcolor) !important;
+}
+.swiper-button-prev {
+  color: var(--yellowcolor) !important;
+}
+.swiper-pagination-bullet {
+  background: var(--yellowcolor) !important;
+}
+
+.movement-png-2 {
+  width: 500px !important;
+  z-index: -1;
+  position: absolute;
+  top: 10%;
+}
+.movement-png-1 {
+  width: 1000px !important;
+  z-index: -2;
+  position: absolute;
+  top: 0%;
+}
+
+/* Responsive ayarlamalar */
+
+/* Küçük ekranlar (mobil) için */
+@media (max-width: 600px) {
+  .hamburger.active {
+    top:60px;
+   
+  }
+  .hamburger {
+   
+    top:60px;
+    
+  }
+  .area1 li a {
+    color: var(--blackcolor) !important;
+
+    top: 50px;
+  }
+}
+
+/* Orta ekranlar (tablet) için */
+@media (min-width: 601px) and (max-width: 1024px) {
+}
+
+/* Büyük ekranlar (masaüstü) için */
+@media (min-width: 1025px) {
+}
+.box { 
+  min-height: 100%;
+  margin: 5;
+  text-align: center;
+  border: var(--yellowcolor) solid 1px;
+  height: auto;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  transition: background-color 500ms, border 500ms;
+}
+
+.box:hover {
+  box-shadow: 0 0 10px var(--yellowcolor);
+  background-color: rgba(
+    15,
+    15,
+    15,
+    0.521
+  ); /* Yumuşak geçiş için bu renk değiştiriliyor */
+
+  transition: margin-top 500ms, background-color 500ms, border 500ms;
+}
+
+/* SVG'yi beyaza çevir */
+.box img {
+  width: 75px;
+  transition: filter 500ms;
+}
+
+.box:hover img {
+  filter: invert(100%) brightness(100%) contrast(100%);
+}
+
+.area2 h1 {
+  color: #ffffff;
+}
+
+.area2 h5 {
+  color: #000;
+}
+.area2 p {
+  font-size: 18px;
+  color: #000;
+}
+
+.box:hover p,
+h1 {
+  color: #ffffff;
+}
+.box:hover h5 {
+  color: #ffffff;
+}
+.box h5 {
+  font-weight: 500;
+}
+
+.baslikline {
+  background-color: #fff;
+  width: 20px; /* İlk boyut */
+  height: 1px; /* İlk yükseklik */
+  border-radius: 20px;
+  transition: width 0.5s; /* Geçiş efekti */
+}
+.baslikline-black {
+  background-color: #000000;
+  width: 20px; /* İlk boyut */
+  height: 1px; /* İlk yükseklik */
+  border-radius: 20px;
+  transition: width 0.5s; /* Geçiş efekti */
+}
+.hizmetbaslik:hover + .baslikline {
+  width: 100px; /* Hover durumundaki genişlik */
+}
+
+.hizmetbaslik:hover + .baslikline-black {
+  width: 100px; /* Hover durumundaki genişlik */
+}
+.footer {
+  padding: 20px;
+  background: var(--blackcolor);
+  color: #dddddd;
+}
+
+.footer ul {
+  list-style: none;
+}
+.footer img {
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.footer li a {
+  font-size: 16px;
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+}
+.footer li a:hover {
+  color: #ffffff;
+}
+
+.footerline {
+  background-color: rgb(31, 171, 137);
+  width: 20px; /* İlk boyut */
+  height: 1px; /* İlk yükseklik */
+  border-radius: 20px;
+  transition: width 0.5s; /* Geçiş efekti */
+}
+
+.footerhizmetbaslik a:hover .footerline {
+  width: 100px; /* Hover durumundaki genişlik */
+}
+
+.social i {
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+
+  font-size: 36px;
+}
+.social .fa-instagram {
+  border-radius: 10px;
+  transition: all 500ms;
+}
+.social .fa-instagram:hover {
+  padding: 13px;
+}
+.social .fa-whatsapp {
+  background: #008e2b;
+  border-radius: 10px;
+  transition: all 500ms;
+}
+.social .fa-whatsapp:hover {
+  padding: 13px;
+}
+.gradient {
+  background: #833ab4;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+}
+
+.social a {
+  color: #fff;
+}
+.telefon {
+  text-decoration: none;
+  color: #fff;
+}
+.footer-top {
+  border-bottom: solid 1px var(--yellowcolor);
+}
+
+.ref-logo {
+  max-width: 200px;
+}
+.kenar {
+  display: flex;
+  margin-top: 50px;
+  top: 10px;
+  box-shadow: 0 0 10px #000;
+  align-items: center;
+  margin-inline-start: 50px;
+  margin-block-end: 10px;
+  width: 1px;
+  height: 100px;
+  background: #000;
+}
+
+.breadcrumb {
+  height: 200px;
+  
+}
+/* ---- reset ---- */
+
+canvas {
+  display: block;
+  
+} /* ---- particles.js container ---- */
+#particles-js {
+  position:relative;
+  width: 100%;
+  height: 108%;
+  background: #1b1b1b;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 25%;
+} /* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #00ffff;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+.breadcrumb h1{
+  top: 10vh;
+  left:10%;
+}
+.breadcrumb a{
+
+  transition: all 500ms;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  left: 20px;
+  top: 10px;
+ font-size: 18px;
+}
+
+.breadcrumb a:hover{
+  font-weight: 700;
+  text-decoration: none;
+  list-style: none;
+}
+.breadcrumb .now-page{
+  color: var(--yellowcolor);
+  font-weight: 400;
+  left: 100px;
+  top: 10px;
+ font-size: 18px;
+}
+
+.area3{
+ background: #ffffff;
+  font-size: 18px;
+}
+.area3 .fa-solid{
+  margin-right: 5px;
+  color:  var(--yellowcolor);
+}
+.area3 img{
+  width: calc(100% - 10px); /* Col-md-6 genişliğini kullan */
+  height: auto; /* Oranı koru */
+}
+input{
+   border: #008e2b 5px solid;
+   border-radius: 20px;
+}
+
+.btn-filter-black{
+  transition: all 500ms;
+  width: auto;
+  min-width: 100px;
+  padding: 10px;
+ color: #fff;
+ border-radius: 10px;
+ border: 1px solid var(--yellowcolor);
+ background: var(--blackcolor);
+ margin: 5px;
+}
+.btn-filter-black:hover{
+  transition: all 500ms;
+  width: auto;
+  min-width: 100px;
+  padding: 10px;
+ color: #fff;
+ border-radius: 10px;
+ border: 1px solid var(--yellowcolor);
+ background: var(--yellowcolor);
+}
+.btn-filter-black.active {
+  background-color: var(--yellowcolor);
+  color: #fff;
+}
+.filtered {
+  transition: all 500ms;
+  width: 100%;  /* veya istediğiniz bir genişlik */
+  height: auto; /* yükseklik otomatik */
+  width: calc(33.333% - 10px);
+  margin-bottom: 10px;
+
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 1;  /* Başlangıçta görünür */
+  transition: opacity 2s ease;  /* 500ms'lik geçiş süresi */
+}
+
+
+.yesilcizgi{
+  border-bottom: 1px solid var(--yellowcolor) !important;
+}
+label{
+ display: flex !important;
+  color: #fff;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  margin-top: 50px;
+  background-color: var(--blackcolor);
+  border: 1px solid var(--yellowcolor);
+  border-radius: 10px;
+  color: white;
+  padding: 12px 20px;
+  min-width: 300px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: var(--yellowcolor);
+  border: 1px solid var(--blackcolor);
+  border-radius: 10px;
+  color: white;
+  padding: 12px 20px;
+  min-width: 300px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color and some padding around the form */
+.button-whatsapp {
+ right: 25px;
+  bottom: 120px;
+  width: 60px;
+  height: 60px;
+  border-radius: 28px;
+
+ z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  pointer-events: initial;
+  background-size: 130% 130%;
+  transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow: 0 0 10px #00000093;
+  color: rgb(255, 255, 255);
+  background: #00d215;
+  position:fixed;
+}
+.button-whatsapp:hover {
+  right: 22px;
+   bottom: 120px;
+   width: 65px;
+   height: 65px;
+   border-radius: 35px;
+ 
+  z-index: 1000;
+   align-items: center;
+   justify-content: center;
+  
+   background-size: 130% 130%;
+   transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+   border: 0 !important;
+   color: rgb(255, 255, 255);
+   background: #00d215;
+   position:fixed;
+ }
+
+ .wap {
+  color: #ffffff;
+  padding-top:10px ;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  border: 0 !important;
+  display: flex;
+  text-decoration:none;
+  list-style: none;
+ }
+ .wap:hover {
+  color: #ffffff;
+  padding-top:12px ;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  border: 0 !important;
+  display: flex;
+  text-decoration:none;
+  list-style: none;
+ }
+ a {
+
+  text-decoration: none !important;
+  
+ }

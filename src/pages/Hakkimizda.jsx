@@ -5,6 +5,9 @@ import Breadcrumb from "../Breadcrumb";
 import Navbar from "../Navbar";
 import Area3 from "../area3";
 
+import References from "../References";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function Hakkimizda() {
   
   return (
@@ -12,6 +15,7 @@ function Hakkimizda() {
       <Navbar/>
       <Breadcrumb/>
       <Area3/>
+      <References/>
     </div>
   );
 }

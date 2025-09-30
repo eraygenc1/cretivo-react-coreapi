@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-
+import Swiper from 'swiper';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 function Slider() {
  useEffect(() => {
   const title = document.querySelector('.movement-png-1');

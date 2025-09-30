@@ -527,7 +527,7 @@ canvas {
 .area3{
   padding: 20px;
   position: relative;
-  top: -8vh;
+  top: 0vh;
  background: #ffffff;
   font-size: 18px;
 }
@@ -692,5 +692,9 @@ box-shadow: 0 0 10px #00000093;
  a {
 
   text-decoration: none !important;
+  
+ }
+ .nav-menu li{
+  color:#fff;
   
  }

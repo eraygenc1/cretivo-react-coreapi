@@ -77,12 +77,12 @@ export default function Breadcrumb() {
         retina_detect: true,
       }}
       style={{
-        position: "absolute",
+        position: "relative",
         top: 0,
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: 0,
+        zIndex: 999999999999999,
       }}
     />
     <a className="position-absolute" href="index.html">Anasayfa / </a> <a className="now-page position-absolute " href="about-us.html">Hakkımızda</a> 

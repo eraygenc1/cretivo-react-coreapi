@@ -157,8 +157,9 @@ h5 {
   transition: all 1s;
 }
 .area2 {
+  position: relative;
   transition: all 500ms;
-  position: static;
+  
   display: flex;
   flex-direction: column;
   height: max-content;
@@ -357,6 +358,7 @@ h1 {
   width: 100px; /* Hover durumundaki genişlik */
 }
 .footer {
+  position: relative;
   padding: 20px;
   background: var(--blackcolor);
   color: #dddddd;

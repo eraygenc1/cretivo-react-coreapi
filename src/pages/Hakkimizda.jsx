@@ -1,22 +1,24 @@
-import React from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import Breadcrumb from "../Breadcrumb";
+import React, { useEffect } from "react";
 import Navbar from "../Navbar";
-import Area3 from "../area3";
-
+import Breadcrumb from "../Breadcrumb";
+import Area3 from "../Area3";
 import References from "../References";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import Footer from "../Footer";
 function Hakkimizda() {
-  
+  useEffect(() => {
+    window.scrollTo(0, 0); // route geçişinde sayfa en üste gelsin
+  }, []);
+
   return (
-    <div>
-      <Navbar/>
-      <Breadcrumb/>
-      <Area3/>
-      <References/>
-    </div>
+    <>
+      <Navbar />
+      <Breadcrumb />
+      <Area3 />
+      <References />
+      <Footer/>
+    </>
   );
 }
 

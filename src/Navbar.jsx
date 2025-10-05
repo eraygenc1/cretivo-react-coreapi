@@ -35,9 +35,9 @@ function Navbar() {
 
       {/* Logo */}
       <div className="navbar">
-        <div className="navbar-logo">
-          <img src="/assets/img/cretivo-logo-white.png" alt="logo" />
-        </div>
+         <Link to="/"><div className="navbar-logo">
+        <img src="/assets/img/cretivo-logo-white.png" alt="logo" />
+        </div></Link> 
       </div>
     </header>
   );

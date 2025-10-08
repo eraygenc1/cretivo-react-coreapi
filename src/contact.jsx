@@ -31,8 +31,8 @@ export default function contact() {
 
                 <label htmlFor="mail">E-Mail</label>
                 <input
-                  type="email"
-                  id="mail"
+                  type="text"
+                  id="email"
                   name="mail"
                   placeholder="E-Mail giriniz..."
                 />

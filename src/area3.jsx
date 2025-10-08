@@ -1,5 +1,8 @@
 import React from 'react'
-
+import { FaUserShield } from "react-icons/fa";
+import { AiFillExperiment } from "react-icons/ai";
+import { BiAtom } from "react-icons/bi";
+import { RiCustomerService2Fill } from "react-icons/ri";
 export default function Area3() {
   return (
     <div className="area3">
@@ -23,10 +26,10 @@ export default function Area3() {
             </p>
 
             <p>Değerlerimiz:</p>
-            <p><i className="fa-solid fa-check"></i> Yaratıcılık</p>
-            <p><i className="fa-solid fa-check"></i> Güvenilirlik</p>
-            <p><i className="fa-solid fa-check"></i> Teknolojik Yenilikçilik</p>
-            <p><i className="fa-solid fa-check"></i> Müşteri Memnuniyeti</p>
+            <p> <AiFillExperiment className='about-list-icons'/>Yaratıcılık</p>
+            <p><FaUserShield className='about-list-icons'/> Güvenilirlik</p>
+            <p><BiAtom className='about-list-icons'/> Teknolojik Yenilikçilik</p>
+            <p> <RiCustomerService2Fill className='about-list-icons'/> Müşteri Memnuniyeti</p>
 
             <p>
               Siz de markanızı dijitalde parlatmak için bizimle{" "}
